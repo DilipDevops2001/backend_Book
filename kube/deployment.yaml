@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: prod
+  labels:
+    role: backend
+    env: demo
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+  selector:
+    matchLabels:
+      role: backend
+  template:
+    metadata:
+      labels:
+        role: backend
+        env: demo
+    spec:
+      containers:
+        - name: backend-app
+          image: dilipford/hop
+          imagePullPolicy: Always  # Ensures the latest image is always pulled
+          ports:
+            - containerPort: 4800  # Updated to 4800
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+         
+

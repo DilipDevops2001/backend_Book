@@ -24,16 +24,10 @@ spec:
     spec:
       containers:
         - name: backend-app
-          image: docker push dilipford/backend:latest
+          image: dilipford/backend
           imagePullPolicy: Always  # Ensures the latest image is always pulled
           ports:
             - containerPort: 4800  # Updated to 4800
-          resources:
-            requests:
-              memory: "128Mi"
-              cpu: "100m"
-            limits:
-              memory: "256Mi"
-              cpu: "500m"
+    
          
 

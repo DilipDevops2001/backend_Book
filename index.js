@@ -39,7 +39,7 @@ app.use(function (req, res, next) {
 });
 
 app.get("/",function(req, res){
-    res.end(JSON.stringify({ msg: "Backend Connected Successfully 1 : ) ...." }));
+    res.end(JSON.stringify({ msg: "[+] Backend Connected Successfully 1 : ) ...." }));
 })
 
 app.get("/getBooks", function (req, res) {

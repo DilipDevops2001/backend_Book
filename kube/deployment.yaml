@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: backend-app
-          image: dilipford/hop
+          image: docker push dilipford/backend:latest
           imagePullPolicy: Always  # Ensures the latest image is always pulled
           ports:
             - containerPort: 4800  # Updated to 4800
